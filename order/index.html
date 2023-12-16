@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+    rel="stylesheet">
+    <style>
+      .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .nav-link.active{
+        font-family: 'Lato', sans-serif;
+    }
+    
+    .btn-product{
+        background-color: #092a37;
+        color: white;
+    }
+    .btn-product:hover{
+        border: 1px solid #092a37;
+        color: #092a37;
+    }
+    
+    .pName {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* This will add an ellipsis (...) if the content overflows */
+      }
+    
+
+      
+#popup{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: none;
+}
+#popup-bg{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.9;
+}
+
+#popup-front{
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
+    background-color: white; 
+    width: 30%;
+    border-radius: 25px;
+     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+      border: 5px solid #092a37; 
+}
+
+/* #popup-body{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+} */
+#popup-close-icon{
+    /* position: absolute;
+    top: 0px;
+    right: 30px; */
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.5;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#popup-close-icon:hover{
+    opacity: 1;
+}
+
+#popup-btn{
+    width: 30%;
+}
+
+#op{
+    font-size: 24px;
+}
+@media only screen and (max-width: 1000px) {
+  
+  .wrapper{
+  width: 60%;
+}
+#popup-front{
+    width: 60%;
+}
+
+#op{
+    font-size: 22px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+}
+.wrapper{
+  width: 60%;
+}
+#popup-front{
+    width: 80%;
+}
+
+#op{
+    font-size: 18px;
+}
+}
+
+    </style>
+</head>
+
+
+<body style="position: relative;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white" style="min-height: 10vh;background-color: white;margin: 0;padding: 0px 35px;">
+    <a class="navbar-brand" style="font-size: 50px; font-family: 'Dancing Script', cursive;color: #092a37;" href="../Home/index.html">Lactancia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active ps-5" aria-current="page" href="../Home/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" id="nav-products" href="../category/index.html">
+                    Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../Contact/index.html">Contact
+                    Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../TermsOfService/index.html">
+                    Terms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../PrivacyPolicy/index.html">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" href="../LoginPage/index.html"><i
+                        class="fa-solid fa-user-large"></i></a>
+            </li>
+
+        </ul>
+    </div>
+  </nav>
+  
+
+  <div class="container p-5 bg-white" style="width: 80%; margin: 10vh auto 0vh auto;box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <h5 class="text-center" style="font-family: 'Dancing Script', cursive;color: #092a37;font-size: 48px;">Your Orders</h5>
+  
+  <div id="cart-box" style="margin-top: 0;">
+
+  </div>
+
+  <h5 class="text-center mt-3" style=" font-family: 'Lato', sans-serif; color: #092a37;" id="total_amount"></h5>
+  <h5 class="text-center mt-3" id="cart-msg" style="display: none;">There is no order.</h5>
+
+
+   
+
+  </div>
+
+  <div class="mb-5 mt-3 text-center">
+    <a href="../category/index.html" class="btn-product btn" >Keep Shopping</a>
+</div>
+
+  <div class="footer" style="background-color: #092a37;color: white; padding: 20px;">
+    <div class="socialIcon">
+        <a href="" style="background-color: white;"><i class="fa-brands fa-facebook"  target="_blank"></i></a>
+        <a style="background-color: white;" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a style="background-color: white;" href=""><i class="fa-brands fa-twitter" target="_blank"></i></a>
+        <a style="background-color: white;" href=""><i class="fa-brands fa-whatsapp" target="_blank"></i></a>
+    </div>
+    <div class="footerNav">
+        <ul>
+            <li ><a href="../Contact/index.html">Contact Us</a></li>
+            <li><a href="../TermsOfService/index.html">Terms & Service</a></li>
+            <li><a href="../PrivacyPolicy/index.html">Privacy Policy</a></li>
+            <!--<li><a href="../Feedback/index.html">Feedback</a></li>-->
+        </ul>
+    </div>
+    <div class="footerbottom">
+        <p>2023, Lactancia. All rights reserved</p>
+    </div>
+</div>
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+
+
+  showToCart();
+
+
+  function showToCart() {
+    var carthtml = '';
+    var total_amount = 0;
+
+    var storedData = localStorage.getItem("orders");
+
+    if (JSON.parse(storedData).length == 0) {
+      document.getElementById('cart-msg').style.display = "block";
+      document.getElementById('heading').style.display = "none";
+      document.getElementById('btn-checkout').style.display = "none";
+    }
+
+    if (storedData) {
+      var userData = JSON.parse(storedData);
+      userData.map((product) => {
+        carthtml += '<div class="row border m-0  p-2 d-flex align-items-center  "><div class="col-lg-2 text-center">' +
+          ' <img src="' + product.img + '" style="width: 100px;height: 100px;object-fit: cover;" /></div>' +
+          '<div class="col-lg-2 text-center"><h5>' + product.name + '</h5></div><div class="col-lg-2 text-center"><p>CAD ' + product.price + '</p></div>' +
+          '<div class="col-lg-2 text-center"><p class="m-0"> ' + product.quantity + '</p></div>' +
+          '<div class="col-lg-2 text-center"><p class="m-0"> '+'$' + (product.quantity * product.price).toFixed(2) + '</p></div>' +
+          '</div>';
+
+        
+      });
+    } else {}
+
+    document.getElementById('cart-box').innerHTML = carthtml;
+   
+  }
+
+
+
+</script>
+
+</body>
+
+</html>

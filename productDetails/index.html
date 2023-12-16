@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+    rel="stylesheet">
+    <style>
+      .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .nav-link.active{
+        font-family: 'Lato', sans-serif;
+    }
+    
+    .btn-product{
+        background-color: #092a37;
+        color: white;
+    }
+    .btn-product:hover{
+        border: 1px solid #092a37;
+        color: #092a37;
+    }
+    
+    .pName {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* This will add an ellipsis (...) if the content overflows */
+      }
+    
+    </style>
+</head>
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white" style="min-height: 10vh;background-color: white;margin: 0;padding: 0px 35px;">
+    <a class="navbar-brand" style="font-size: 50px; font-family: 'Dancing Script', cursive;color: #092a37;" href="../Home/index.html">Lactancia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active ps-5" aria-current="page" href="../Home/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" id="nav-products" href="../category/index.html">
+                    Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../Contact/index.html">Contact
+                    Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../TermsOfService/index.html">
+                    Terms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" href="../PrivacyPolicy/index.html">Privacy Policy</a>
+            </li>
+            <li class="nav-item" style="position: relative;">
+                <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" onclick="showCart()" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                <div style="position: absolute;top: 0;right: -10px;background-color: tomato;color: white;border-radius: 50%;padding: 3px 5px;font-size: 10px;align-items: center;font-weight: bolder;" id="cart-number">
+                    
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" href="../LoginPage/index.html"><i
+                        class="fa-solid fa-user-large"></i></a>
+            </li>
+
+        </ul>
+    </div>
+  </nav>
+  
+
+  <div class="container p-5 bg-white" style="width: 80%; margin-top: 10vh;box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <div class="row">
+      <div class="col-12 col-lg-5">
+        <div id="product-img">
+
+        </div>
+        
+      </div>
+
+      <div class="col-12 col-lg-7 ">
+      
+
+        <div id="product-info">
+          
+        </div>
+        
+        
+        <p style="font-weight: bold;">Quantity</p>
+        <div>
+          <button class="btn btn-product border p-0 mr-2 " onclick="addQuantity()"
+            style="width: 40px;height: 40px;font-size: 24px;">+</button>
+          <p style="display: inline;" id="p_quantity" class=" ml-2 mr-2">1</p>
+          <button  class="btn border btn-product p-0 ml-2" onclick="subQuantity()"
+            style="width: 40px;height: 40px;font-size: 24px;">-</button>
+        </div>
+
+
+        <div style="display: flex; justify-content: end;" class="mt-5">
+          <button class="btn btn-product" onclick="addToCart()"> Add To Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container p-5 bg-white mt-5 mb-5" style="width: 80%;">
+
+    <h3 class="mb-5" style="font-family: 'Lato', sans-serif;font-size: 28px;color: #092a37;">Related Products</h3>
+
+    <div class="row" id="relatedProducts">
+
+    </div>
+
+  </div>
+
+  <div class="footer" style="background-color: #092a37;color: white; padding: 20px;">
+    <div class="socialIcon">
+        <a href="" style="background-color: white;"><i class="fa-brands fa-facebook"  target="_blank"></i></a>
+        <a style="background-color: white;" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a style="background-color: white;" href=""><i class="fa-brands fa-twitter" target="_blank"></i></a>
+        <a style="background-color: white;" href=""><i class="fa-brands fa-whatsapp" target="_blank"></i></a>
+    </div>
+    <div class="footerNav">
+        <ul>
+            <li ><a href="../Contact/index.html">Contact Us</a></li>
+            <li><a href="../TermsOfService/index.html">Terms & Service</a></li>
+            <li><a href="../PrivacyPolicy/index.html">Privacy Policy</a></li>
+            <!--<li><a href="../Feedback/index.html">Feedback</a></li>-->
+        </ul>
+    </div>
+    <div class="footerbottom">
+        <p>2023, Lactancia. All rights reserved</p>
+    </div>
+</div>
+
+<div class="border" id="cart" style="background-color: white;position: fixed; height: 100vh;width: 350px;top: 0;right: -350px;z-index: 999;">
+  <i class="fa fa-arrow-right mt-5 ml-5 mr-5"  style="cursor: pointer;margin-left: 25px;" onclick="hideCart()" aria-hidden="true"></i>
+
+  <h4 class="text-center " style="font-family: 'Dancing Script', cursive;font-size: 40px;color: #092a37;">Cart</h4>
+
+  <div id="cart-box">
+    <div class="p-3 mb-1"  style="position: relative;">
+      <div class="row  border">
+        <div class="col-4">
+          <img src="../images/batter.png" style="width: 100%;" />
+        </div>
+        <div class="col-8">
+          <h5>Butter</h5>
+          <p class="m-0">Price: CAD 4</p>
+          <p class="m-0">Quantity: 2</p>
+          
+        </div>
+
+        
+      </div>
+
+      <a class="btn border" style="position: absolute;top: 20px;right: 10px;">X</a>
+    </div>
+  </div>
+
+  <div  style="position: absolute;bottom: 10px;left: 50%;transform: translate(-50%,-50%);">
+    <a class="btn" style="background-color: #092a37;color: white;" href="../cart/index.html">View Full Cart</a>
+  </div>
+  
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"></script>
+
+<!-- Add Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+
+
+showToCart();
+
+   
+function showCart(){
+  document.getElementById('cart').style.right='0px';
+  document.getElementById('cart').style.transition='all 0.5s';
+  showToCart();
+}
+
+function showToCart(){
+
+
+var carthtml='';
+
+var storedData = localStorage.getItem("new-cart");
+
+var num=0;
+  if (storedData) {
+    
+    var userData = JSON.parse(storedData);
+    //console.log(userData.length);
+
+    if(userData.length==0){
+        carthtml='<p style="text-align:center;font-weight:bold;margin-top:25px;">There is no item in the cart.</p>';
+        num=0;
+    }
+    else{
+        num=userData.length;
+        userData.map((product)=>{
+      carthtml+='<div class="p-3 mb-1"  style="position: relative;"><div class="row  border"><div class="col-4">'+
+  ' <img src="'+product.img+'" style="width: 100%;" /></div><div class="col-8"><h5>'+product.name+'</h5>'+
+    '<p class="m-0">Price: CAD 4</p><p class="m-0">Quantity: '+product.quantity+'</p>  </div></div></div>'
+    })
+    }
+
+   
+  }
+  else{
+    carthtml='<p style="text-align:center;font-weight:bold;margin-top:25px;">There is no item in the cart.</p>';
+    num=0;
+}
+
+  document.getElementById('cart-box').innerHTML=carthtml;
+  document.getElementById("cart-number").innerHTML=num;
+
+}
+
+function hideCart(){
+  document.getElementById('cart').style.right='-350px';
+  document.getElementById('cart').style.transition='all 0.5s';
+
+}
+
+
+
+let queryParams = new URLSearchParams(window.location.search);
+let id = queryParams.get("p_id");
+
+if (id == null) {
+  window.location.replace("../category/index.html")
+}
+else{
+  const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+
+          var responseJsonObj = JSON.parse(this.responseText);
+          if(responseJsonObj.length==0){
+            window.location.replace("../category/index.html")
+          }
+
+          var product=responseJsonObj[0];
+          let producthtml='<h3 class="mt-2" id="p_name" style="font-family: \'Lato\', sans-serif;color: #092a37">'+product.name+'</h3>'+
+          '<p>'+product.description+'</p>'+
+          '<p ><b>Volume:</b> <span id="p_volume">'+product.volume+'</span></p>'+
+          '<p ><b>Price:</b> CAD<span id="p_price">'+product.price+'</span></p>'
+
+          document.getElementById('product-info').innerHTML=producthtml
+
+          let imgHtml='<img id="p_image" src="'+product.product_image+'" style="width: 100%;" />'
+          document.getElementById('product-img').innerHTML=imgHtml
+          
+          relatedProducts(product.category);
+        }
+
+        xhttp.open("GET", "http://localhost:3000/product?id=" + id, true);
+        xhttp.send();
+}
+
+
+function relatedProducts(cId){
+  const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+
+          var responseJsonObj = JSON.parse(this.responseText);
+
+          let productcategoryHTML = '';
+          responseJsonObj.forEach(product => {
+
+            if(product.id==id){
+
+            }
+            else{
+              productcategoryHTML += '<div class="col-lg-3 col-md-4 col-sm-4  p-0"> <div class="card m-3" style="box-shadow: 0 5px 15px rgba(0,0,0,0.1);">' +
+              ' <img src="' + product.product_image + '" style="height: 200px;object-fit: cover;"  class="card-img-top" alt="...">' +
+              ' <div class="card-body p-3" style="position: relative;">' +
+              '<div class="row"><div class="col-6"> <h5 class="pName card-title text-left" style="font-family: \'Lato\', sans-serif;">' + product.name + '</h5></div>' +
+              '<div class="col-6"><p class="card-text  text-right" style="font-weight:bold;text-align:right">CAD ' + product.price + '</p></div></div>' +
+              '<p class="card-text truncate-text">' + product.description + '</p> ' +
+              ' <a href="../productDetails/index.html?p_id='+product.id+'" class="btn btn-product justify-content-center" style="width:100%">View Detail</a></div>'
+
+
+            productcategoryHTML += '</div></div>'
+
+            }
+
+                    });
+
+          document.getElementById('relatedProducts').innerHTML = productcategoryHTML;
+
+         
+        }
+
+        xhttp.open("GET", "http://localhost:3000/product?category=" + cId, true);
+        xhttp.send();
+}
+
+    function run(){
+      var selectedfrequency = document.querySelector('input[name="frequency"]:checked');
+      if (selectedfrequency.value=="customize") {
+        document.getElementById('days').style.display="flex";
+      } else {
+        document.getElementById('days').style.display="none"; 
+      }
+    }
+
+    function addQuantity() {
+      var quantity = document.getElementById('p_quantity').innerHTML;
+
+      quantity = parseInt(quantity) + 1;
+      document.getElementById('p_quantity').innerHTML = quantity;
+    }
+    function subQuantity() {
+      var quantity = document.getElementById('p_quantity').innerHTML;
+      if (quantity == 1) {
+
+      }
+      else {
+        quantity = parseInt(quantity) - 1;
+        document.getElementById('p_quantity').innerHTML = quantity;
+      }
+    }
+ 
+
+
+
+
+    function addToCart(){
+   var p_name=document.getElementById('p_name').innerHTML;
+   var p_price=document.getElementById('p_price').innerHTML;
+   var p_volume=document.getElementById('p_volume').innerHTML;
+   var p_quantity=document.getElementById('p_quantity').innerHTML;
+   var p_img=document.getElementById('p_image').src;
+   var p_id=id;
+
+   let cart_item={
+    id:p_id,
+    name:p_name,
+    price:p_price,
+    volume:p_volume,
+    quantity:p_quantity,
+    img:p_img
+   }
+
+   var storedData = JSON.parse(localStorage.getItem("new-cart"));
+   let newstoredData=[];
+   var flag=true;
+   if(storedData){
+
+     storedData.map((product)=>{
+
+     
+      if(product.id==cart_item.id){
+        flag=false;
+        newstoredData.push( cart_item);
+      }
+      else{
+        newstoredData.push(product);
+      }
+
+      
+
+      
+
+    })
+    if(flag){
+        newstoredData.push(cart_item);
+      }
+
+  console.log(newstoredData);
+
+    localStorage.setItem("new-cart", JSON.stringify(newstoredData));
+
+   }else{
+    localStorage.setItem("new-cart", JSON.stringify([cart_item]));
+   }
+  
+
+   showCart(); 
+
+  }
+ 
+ 
+ 
+
+ 
+ </script>
+</body>
+
+</html>

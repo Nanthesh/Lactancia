@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lactancia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary bg-white" style="height: 10vh;background-color: white;margin: 0;">
+
+        <div class="" style="background: white;margin: 0;display: flex;justify-content: space-around;width: 100%;padding: 0 25px;">
+            <a class="navbar-brand" style="font-size: 50px; font-family: 'Dancing Script', cursive;color: #092a37;" href="../Home/index.html">Lactancia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " style="display: flex;justify-content: right;" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                        <a class="nav-link active ps-5" aria-current="page" href="../Home/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5" id="nav-products" href="../category/index.html">
+                            Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5" href="../Contact/index.html">Contact
+                            Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5" href="../TermsOfService/index.html">
+                            Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5" href="../PrivacyPolicy/index.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item" style="position: relative;">
+                        <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" onclick="showCart()" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <div style="position: absolute;top: 0;right: -10px;background-color: tomato;color: white;border-radius: 50%;padding: 3px 5px;font-size: 10px;align-items: center;font-weight: bolder;" id="cart-number">
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" href="../LoginPage/index.html"><i
+                                class="fa-solid fa-user-large"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white"
+        style="min-height: 10vh;background-color: white;margin: 0;padding: 0px 35px;">
+        <a class="navbar-brand" style="font-size: 50px; font-family: 'Dancing Script', cursive;color: #092a37;"
+            href="../Home/index.html">Lactancia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active ps-5" aria-current="page" href="../Home/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-5" id="nav-products" href="../category/index.html">
+                        Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-5" href="../Contact/index.html">Contact
+                        Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-5" href="../TermsOfService/index.html">
+                        Terms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-5" href="../PrivacyPolicy/index.html">Privacy Policy</a>
+                </li>
+                <li class="nav-item" style="position: relative;">
+                    <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" onclick="showCart()" href="#"><i
+                            class="fa-solid fa-bag-shopping"></i></a>
+                    <div style="position: absolute;top: 0;right: -10px;background-color: tomato;color: white;border-radius: 50%;padding: 3px 5px;font-size: 10px;align-items: center;font-weight: bolder;"
+                        id="cart-number">
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-5" style="color: #092a37;font-size: 18px;" href="../LoginPage/index.html"><i
+                            class="fa-solid fa-user-large"></i></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div style="height: 90vh; position: relative;">
+        <img src="../images/banner.jpg"
+            style="height: 90vh; width: 100%; position: absolute; top: 0; object-fit: cover;" />
+        <div style="height: 90vh; width: 100%; position: absolute; top: 0; background-color: black; opacity: 0.5;">
+
+        </div>
+        <div class="d-flex justify-content-center flex-column align-items-center"
+            style="height: 90vh; z-index: 9; position: absolute; top: 0; width: 100%;">
+            <p class="banner-text">Milk And More!</p>
+            <p class="banner-text-2">FRESH. LOCAL. DELIVERED.</p>
+
+            <a id="banner-button" href="../category/index.html" style="text-decoration: none;">View Our Products</a>
+        </div>
+    </div>
+
+    <div>
+        <h3
+            style="text-align: center; margin-top: 55px; font-size: 60px; font-family: 'Dancing Script', cursive;color: #092a37;">
+            Welcome To Our Farm!
+        </h3>
+        <hr style="width: 20%;height: 2px;background-color: red;margin:25px auto;">
+    </div>
+
+    <section class="info-box">
+        <div class="info-container">
+            <div class="info-box1">
+                <div class="img-1">
+                    <img src="../images/car1.jpg" />
+                </div>
+
+
+                <div class="img-2">
+                    <img src="../images/car3.jpg" />
+                </div>
+
+
+            </div>
+
+            <div class="info-box2">
+                <h5 style="font-weight: bold;font-size: 28px;">Meet Our Cows</h5>
+                <p class="card-text">Discover the personalities behind our dairy goodness – meet the happy, healthy cows
+                    that make our farm a thriving haven of wholesome dairy delights.</p>
+                <br>
+
+                <h5 style="font-weight: bold;font-size: 28px;">Our Dairy Farm</h5>
+                <p class="card-text">Embark on a journey to our sustainable dairy farm, where every drop of milk is a
+                    testament to our commitment to quality, care, and the joy of farm-to-table freshness.</p>
+                <br>
+
+                <h5 style="font-weight: bold;font-size: 28px;">Organic Food</h5>
+                <p class="card-text">Experience the true essence of organic living with our thoughtfully nurtured
+                    produce, cultivated with love and respect for the land – welcome to a world where every bite tells a
+                    story of purity and sustainability.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="row" style="width: 70%; margin: auto; margin-top: 5%;">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 25vh; object-fit: cover;" class="card-img-top" src="../images/car1.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Meet Our Cows</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 25vh; object-fit: cover;" class="card-img-top" src="../images/car2.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Our Dairy Farm</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 25vh; object-fit: cover;" class="card-img-top" src="../images/car3.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Organic Food</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="row "
+        style="background-color: #fafae0;display: flex;justify-content: center;align-items: center;width: 100%;padding: 10vh 0vh;">
+        <div class="col-lg-10">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item col-lg-3" role="presentation">
+                    <button class="nav-link active w-100 custom-tab-button" id="pills-environment-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-environment" type="button" role="tab"
+                        aria-controls="pills-environment" aria-selected="true">
+                        Environment
+                    </button>
+                </li>
+                <li class="nav-item col-lg-3" role="presentation">
+                    <button class="nav-link w-100 custom-tab-button" id="pills-cows-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-cows" type="button" role="tab" aria-controls="pills-cows"
+                        aria-selected="false">
+                        Cows
+                    </button>
+                </li>
+                <li class="nav-item col-lg-3" role="presentation">
+                    <button class="nav-link w-100 custom-tab-button" id="pills-people-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-people" type="button" role="tab" aria-controls="pills-people"
+                        aria-selected="false">
+                        People
+                    </button>
+                </li>
+                <li class="nav-item col-lg-3" role="presentation">
+                    <button class="nav-link w-100 custom-tab-button" id="pills-food-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-food" type="button" role="tab" aria-controls="pills-food"
+                        aria-selected="false">
+                        Food
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent " style="margin-top: 65px;">
+                <div class="tab-pane fade show active" id="pills-environment" role="tabpanel"
+                    aria-labelledby="pills-environment-tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7"
+                                style="display: flex; flex-direction: column;align-items: center;justify-content: center;">
+                                <h2 style=" font-family: 'Lato', sans-serif;color: #092a37;">
+                                    Self-sustaining farms
+                                </h2>
+                                <p>
+                                    We follow practices of co-existence farming. The resources required by the
+                                    farm to thrive are harnesses within the farm itself. Cow dung is used to
+                                    generate methane gas used for day-to-day activities at the farms. The
+                                    residue goes back to the soil as fertilizer for our lands. No artificial
+                                    fertilizers or pesticides are used, maintaining the vitality of the soil at
+                                    our farms.
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="../images/cropcycle.png" alt="crop cycle photo" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-cows" role="tabpanel" aria-labelledby="pills-cows-tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7"
+                                style="display: flex; flex-direction: column;align-items: center;justify-content: center;">
+                                <h2 style=" font-family: 'Lato', sans-serif;color: #092a37;">
+                                    Happy home
+                                </h2>
+                                <p>
+                                    Our farms provide not just shelters, but a stress-free home for our cows. We
+                                    make sure our cows have access to clean water and organic fodder as and when
+                                    they need it.  With an open and dedicated paddock area, our cows
+                                    are healthy, happy, and free.
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="../images/cowcycle.png" alt="cow cycle photo" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-people" role="tabpanel" aria-labelledby="pills-people-tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7"
+                                style="display: flex; flex-direction: column;align-items: center;justify-content: center;">
+                                <h2 style=" font-family: 'Lato', sans-serif;color: #092a37;">
+                                    One big happy family
+                                </h2>
+                                <p>
+                                    Our farmers are at the core of our Lactancia family. Our programs are
+                                    designed with one focus in mind – to elevate our farmers! We handhold them
+                                    at every step of the farming operations to fulfill our promise of providing
+                                    wealth-generation opportunities and a stable source of daily income for the
+                                    farmers and their families.
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="../images/peoplecycle.png" alt="people cycle photo" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-food" role="tabpanel" aria-labelledby="pills-food-tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7"
+                                style="display: flex; flex-direction: column;align-items: center;justify-content: center;">
+                                <h2 style=" font-family: 'Lato', sans-serif;color: #092a37;">
+                                    The food of nature
+                                </h2>
+                                <p>
+                                    We bring you milk, straight from the farms, that is naturally healthy and
+                                    full of flavour. It is pure, clean milk that is free from antibiotics,
+                                    synthetic hormones, artificial additives, or chemical residue. Milk as
+                                    nature intended it to be – healthy, tasty, and full of nutrition!
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="../images/foodcycle.png" alt="food cycle photo" width="100%">
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-md" style="margin: 15vh auto;">
+        <h1
+            style="display: flex; justify-content: center; font-family: 'Dancing Script', cursive;font-size: 48px;color: #092a37;padding: 0 25px;text-align: center;">
+            Products we are proud to serve you
+        </h1>
+        <hr style="width: 20%;height: 2px;background-color: red;margin:25px auto;margin-bottom: 15vh;">
+        <div class="row" id="products">
+        </div>
+    </div>
+
+    <div class="footer" style="background-color: #092a37;color: white; padding: 20px;">
+        <div class="socialIcon">
+            <a href="" style="background-color: white;"><i class="fa-brands fa-facebook" target="_blank"></i></a>
+            <a style="background-color: white;" href="https://www.instagram.com/" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a style="background-color: white;" href=""><i class="fa-brands fa-twitter" target="_blank"></i></a>
+            <a style="background-color: white;" href=""><i class="fa-brands fa-whatsapp" target="_blank"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="../Contact/index.html">Contact Us</a></li>
+                <li><a href="../TermsOfService/index.html">Terms & Service</a></li>
+                <li><a href="../PrivacyPolicy/index.html">Privacy Policy</a></li>
+                <!--<li><a href="../Feedback/index.html">Feedback</a></li>-->
+            </ul>
+        </div>
+        <div class="footerbottom">
+            <p>2023, Lactancia. All rights reserved</p>
+        </div>
+    </div>
+
+    <div class="border" id="cart"
+        style="background-color: white;position: fixed; height: 100vh;width: 350px;top: 0;right: -350px;z-index: 999;">
+        <i class="fa fa-arrow-right mt-5 ml-5 mr-5" style="cursor: pointer;" onclick="hideCart()"
+            aria-hidden="true"></i>
+
+        <h4 class="text-center " style="font-family: 'Dancing Script', cursive;font-size: 40px;color: #092a37;">Cart
+        </h4>
+
+        <div id="cart-box">
+            <div class="p-3 mb-1" style="position: relative;">
+                <div class="row  border">
+                    <div class="col-4">
+                        <img src="../images/batter.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-8">
+                        <h5>Butter</h5>
+                        <p class="m-0">Price: CAD 4</p>
+                        <p class="m-0">Quantity: 2</p>
+
+                    </div>
+
+
+                </div>
+
+                <a class="btn border" style="position: absolute;top: 20px;right: 10px;">X</a>
+            </div>
+        </div>
+
+        <div style="position: absolute;bottom: 10px;left: 50%;transform: translate(-50%,-50%);">
+            <a class="btn" style="background-color: #092a37;color: white;" href="../cart/index.html">View Full Cart</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        run();
+        function run() {
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+
+                var responseJsonObj = JSON.parse(this.responseText);
+                //console.log(responseJsonObj);
+                let productcategoryHTML = '';
+                responseJsonObj.forEach(product => {
+
+
+                    productcategoryHTML += '<div class="col-lg-6 mb-5"><div class="row p-2"> <div class="col-lg-6 p-0">' +
+                        ' <img src="' + product.product_image + '" width="100%" > </div>' +
+                        ' <div class="col-lg-6"><h3 style="font-family: \'Lato\', sans-serif;">' + product.name + '</h3><p class="truncate-text">' + product.description + '</p>' +
+                        ' <a href="../productDetails/index.html?p_id=' + product.id + '" class="btn btn-product justify-content-center" style="width:50%; border-radius:5px;">View Detail</a></div>'
+
+
+
+                    productcategoryHTML += '</div></div></div>'
+                });
+
+                document.getElementById('products').innerHTML = productcategoryHTML;
+
+            }
+            xhttp.open("GET", "http://localhost:3000/product", true);
+            xhttp.send();
+
+            showToCart();
+        }
+
+        function showCart() {
+            document.getElementById('cart').style.right = '0px';
+            document.getElementById('cart').style.transition = 'all 0.5s';
+            showToCart();
+        }
+
+        function showToCart() {
+
+
+            var carthtml = '';
+
+            var storedData = localStorage.getItem("new-cart");
+
+            var num = 0;
+            if (storedData) {
+
+                var userData = JSON.parse(storedData);
+                //console.log(userData.length);
+
+                if (userData.length == 0) {
+                    carthtml = '<p style="text-align:center;font-weight:bold;margin-top:25px;">There is no item in the cart.</p>';
+                    num = 0;
+                }
+                else {
+                    num = userData.length;
+                    userData.map((product) => {
+                        carthtml += '<div class="p-3 mb-1"  style="position: relative;"><div class="row  border"><div class="col-4">' +
+                            ' <img src="' + product.img + '" style="width: 100%;" /></div><div class="col-8"><h5>' + product.name + '</h5>' +
+                            '<p class="m-0">Price: CAD 4</p><p class="m-0">Quantity: ' + product.quantity + '</p>  </div></div></div>'
+                    })
+                }
+
+
+            }
+            else {
+                carthtml = '<p style="text-align:center;font-weight:bold;margin-top:25px;">There is no item in the cart.</p>';
+                num = 0;
+            }
+
+            document.getElementById('cart-box').innerHTML = carthtml;
+            document.getElementById("cart-number").innerHTML = num;
+
+        }
+
+        function hideCart() {
+            document.getElementById('cart').style.right = '-350px';
+            document.getElementById('cart').style.transition = 'all 0.5s';
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
